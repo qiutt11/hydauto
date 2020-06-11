@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手动回调</title>
+</head>
+<body>
+    <h1>签约审核</h1>
+    <form method="post" action="/signResult/">
+        <input name="idcard" type="text" placeholder="输入要审核的身份证号"><br>
+        <input type="radio" name="review" value="1" />审核成功
+        <input type="radio" name="review" value="2" />审核失败<br>
+        <button id="btn1" type="submit">审核</button>
+        {% csrf_token %}
+    </form>
+    <h1>转账结果</h1>
+    <form method="post" action="/withDrawalResult/">
+        <input name="recordNo" type="text" placeholder="输入转账的流水号"><br>
+        <input type="radio" name="review" value="2" />转账成功
+        <input type="radio" name="review" value="3" />转账失败<br>
+        <button id="btn1" type="submit">提交转账结果</button>
+        {% csrf_token %}
+    </form>
+</body>
+</html>
